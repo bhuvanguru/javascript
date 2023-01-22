@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{margin: 10px; padding: 5px;}
+    </style>
+
+    <script>
+        function getamt(){
+            var s=document.getElementById("sr");
+            var ss=sr.options[sr.selectedIndex].text;
+            var d=document.getElementById("des");
+            var ds=des.options[des.selectedIndex].text;
+            if(ss==ds)
+            {
+                alert("source and destination are same!!!");
+            }
+            else{
+                var dsv=d.options[d.selectedIndex].value;
+                var ns=document.getElementById("tseat").value;
+                var tm=parseInt(ns)*parseInt(dsv);
+                document.getElementById("tamt").value=tm
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <div>
+            <label>select source</label>
+            <select id="sr">
+                <option>--select--</option>
+                <option>mysore</option>
+                <option>banglore</option>
+                <option>mandya</option>
+            </select>
+        </div>
+
+        <div>
+            <label>select destination</label>
+            <select id="des">
+                <option>--select--</option>
+                <option value="180">mandya</option>
+                <option value="250">tamil nadu</option>
+                <option value="280">kerala</option>
+            </select>
+        </div>
+
+        <div>
+            <label>enter number of seats</label>
+            <input type="number" id="tseat"/>
+        </div>
+
+        <div>
+            <label>total amount</label>
+            <input type="text" id="tamt" readonly/>
+        </div>
+
+        <div>
+            <input type="button" value="GetAmount" onclick="getamt()"/>
+        </div>
+    </form>
+</body>
+</html>
